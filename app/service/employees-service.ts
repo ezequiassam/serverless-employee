@@ -1,5 +1,5 @@
-import {Model} from 'mongoose';
-import {EmployeeModel} from "../model/employee";
+import { Model } from 'mongoose';
+import { EmployeeModel } from '../model/employee';
 
 export class EmployeesService {
   private employee: Model<any>;
@@ -14,12 +14,10 @@ export class EmployeesService {
    */
   protected async createEmployee(params: EmployeeModel): Promise<object> {
     try {
-      const result = await this.employee.create({
+      return await this.employee.create({
         name: params.name,
         id: params.id,
       });
-
-      return result;
     } catch (err) {
       console.error(err);
 
@@ -34,9 +32,9 @@ export class EmployeesService {
    */
   protected updateEmployee(id: number, data: object) {
     return this.employee.findOneAndUpdate(
-      {id},
-      {$set: data},
-      {new: true},
+      { id },
+      { $set: data },
+      { new: true },
     );
   }
 
@@ -52,7 +50,7 @@ export class EmployeesService {
    * @param id
    */
   protected findOneEmployeeById(id: number) {
-    return this.employee.findOne({id});
+    return this.employee.findOne({ id });
   }
 
   /**
@@ -60,6 +58,6 @@ export class EmployeesService {
    * @param id
    */
   protected deleteOneEmployeeById(id: number) {
-    return this.employee.deleteOne({id});
+    return this.employee.deleteOne({ id });
   }
 }

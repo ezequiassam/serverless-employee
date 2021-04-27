@@ -8,7 +8,7 @@
   ],
   "linterOptions": {
     "exclude": [
-      "tests/*books.mock.ts"
+      "tests/*employee.test.ts"
     ]
   }
 }

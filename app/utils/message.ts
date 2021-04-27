@@ -1,4 +1,4 @@
-import {ResponseVO} from '../model/vo/responseVo';
+import { ResponseVO } from '../model/vo/responseVo';
 
 enum StatusCode {
   success = 200,
@@ -18,7 +18,7 @@ class Result {
   }
 
   /**
-   * Serverless: According to the API Gateway specs, the body content must be stringified
+   * Serverless: According to the API Gateway specs, the body content must be stringifies
    */
   bodyToString() {
     return {

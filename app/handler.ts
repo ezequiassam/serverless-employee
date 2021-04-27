@@ -1,11 +1,11 @@
-import {Context, Handler} from 'aws-lambda';
-import {EmployeesController} from './controller/employees-controller';
-import {employee} from "./model/employee";
-import path from "path";
-import * as dotenv from "dotenv";
-import mongoose from "mongoose";
+import { Context, Handler } from 'aws-lambda';
+import { EmployeesController } from './controller/employees-controller';
+import { employee } from './model/employee';
+import path from 'path';
+import * as dotenv from 'dotenv';
+import mongoose from 'mongoose';
 
-const dotenvPath = path.join(__dirname, '../', 'config/.env.dev');
+const dotenvPath = path.join(__dirname, '../', `config/.env.${process.env.NODE_ENV}`);
 dotenv.config({
   path: dotenvPath,
 });
