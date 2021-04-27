@@ -2,7 +2,7 @@ import {Context} from 'aws-lambda';
 import {Model} from 'mongoose';
 import {MessageUtil} from '../utils/message';
 import {EmployeesService} from '../service/employees-service';
-import {EmployeeModel} from "../model";
+import {EmployeeModel} from "../model/employee";
 
 export class EmployeesController extends EmployeesService {
   constructor(employee: Model<any>) {

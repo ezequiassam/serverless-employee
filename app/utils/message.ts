@@ -1,4 +1,4 @@
-import { ResponseVO } from '../model/responseVo';
+import {ResponseVO} from '../model/vo/responseVo';
 
 enum StatusCode {
   success = 200,
@@ -20,7 +20,7 @@ class Result {
   /**
    * Serverless: According to the API Gateway specs, the body content must be stringified
    */
-  bodyToString () {
+  bodyToString() {
     return {
       statusCode: this.statusCode,
       body: JSON.stringify({

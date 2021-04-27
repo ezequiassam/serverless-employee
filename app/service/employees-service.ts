@@ -1,5 +1,5 @@
 import {Model} from 'mongoose';
-import {EmployeeModel} from "../model";
+import {EmployeeModel} from "../model/employee";
 
 export class EmployeesService {
   private employee: Model<any>;

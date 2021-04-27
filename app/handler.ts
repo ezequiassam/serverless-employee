@@ -1,12 +1,18 @@
 import {Context, Handler} from 'aws-lambda';
-import dotenv from 'dotenv';
-import path from 'path';
 import {EmployeesController} from './controller/employees-controller';
-import {employee} from "./model";
+import {employee} from "./model/employee";
+import path from "path";
+import * as dotenv from "dotenv";
+import mongoose from "mongoose";
 
 const dotenvPath = path.join(__dirname, '../', 'config/.env.dev');
 dotenv.config({
   path: dotenvPath,
+});
+
+mongoose.connect(process.env.DB_URL, {
+  dbName: process.env.DB_NAME,
+  useNewUrlParser: true,
 });
 
 const employeesController = new EmployeesController(employee);

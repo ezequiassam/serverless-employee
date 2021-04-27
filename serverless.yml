@@ -11,9 +11,6 @@ plugins:
   - serverless-offline
 
 package:
-  exclude:
-    - config/.env.stg
-    - config/.env.pro
   include:
     - config/.env.dev
 
