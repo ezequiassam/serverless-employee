@@ -1,9 +1,6 @@
 import mongoose from 'mongoose';
 
-export default mongoose.connect(process.env.DB_URL, {
-  dbName: process.env.DB_NAME,
-  useUnifiedTopology: true,
+export default mongoose.connect("mongodb://root:MongoDB2019!@localhost:27017", {
+  dbName: "study",
   useNewUrlParser: true,
-  bufferCommands: false, // Disable mongoose buffering
-  bufferMaxEntries: 0, // and MongoDB driver buffering
 });

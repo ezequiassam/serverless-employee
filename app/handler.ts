@@ -2,9 +2,9 @@ import {Context, Handler} from 'aws-lambda';
 import dotenv from 'dotenv';
 import path from 'path';
 import {EmployeesController} from './controller/employees-controller';
-import employee from "./model/employee";
+import {employee} from "./model";
 
-const dotenvPath = path.join(__dirname, '../', `config/.env.${process.env.NODE_ENV}`);
+const dotenvPath = path.join(__dirname, '../', 'config/.env.dev');
 dotenv.config({
   path: dotenvPath,
 });

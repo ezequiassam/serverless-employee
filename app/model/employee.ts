@@ -1,4 +1,4 @@
-import {Document, model, Schema} from "mongoose";
+import {Document, model, models, Schema} from "mongoose";
 
 export class EmployeeModel {
   id: number;
@@ -34,6 +34,5 @@ const employeeSchema = new Schema({
 });
 
 
-export default model<EmployeeDocument>('Employee', employeeSchema, process.env.DB_EMPLOYEE_COLLECTION);
-
-
+// Note: OverwriteModelError: Cannot overwrite `Employee` model once compiled. error
+export const employee = (models.employee || model<EmployeeDocument>('employee', employeeSchema, "employees"));
