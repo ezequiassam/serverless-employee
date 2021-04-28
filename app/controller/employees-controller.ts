@@ -1,11 +1,10 @@
 import { Context } from 'aws-lambda';
-import { Model } from 'mongoose';
 import { MessageUtil } from '../utils/message';
 import { EmployeesService } from '../service/employees-service';
 import { EmployeeModel } from '../model/employee';
 
 export class EmployeesController extends EmployeesService {
-  constructor(employee: Model<any>) {
+  constructor(employee: any) {
     super(employee);
   }
 
@@ -19,10 +18,7 @@ export class EmployeesController extends EmployeesService {
     const params: EmployeeModel = JSON.parse(event.body);
 
     try {
-      const result = await this.createEmployee({
-        name: params.name,
-        id: params.id,
-      });
+      const result = await this.createEmployee(params);
 
       return MessageUtil.success(result);
     } catch (err) {

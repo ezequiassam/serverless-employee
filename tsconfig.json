@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "lib": ["esnext"],
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "outDir": "lib",
+    "preserveConstEnums": true,
+    "strictNullChecks": true,
     "sourceMap": true,
-    "target": "esnext"
+    "target": "es5",
+    "outDir": ".build",
+    "moduleResolution": "node",
+    "lib": ["es2015"],
+    "rootDir": "./",
+    "noImplicitAny": true,
+    "esModuleInterop": true
   },
   "exclude": ["node_modules"]
 }

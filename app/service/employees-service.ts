@@ -1,10 +1,9 @@
-import { Model } from 'mongoose';
 import { EmployeeModel } from '../model/employee';
 
 export class EmployeesService {
-  private employee: Model<any>;
+  private employee: any;
 
-  constructor(employee: Model<any>) {
+  constructor(employee: any) {
     this.employee = employee;
   }
 
@@ -12,7 +11,7 @@ export class EmployeesService {
    * Create employee
    * @param params
    */
-  protected async createEmployee(params: EmployeeModel): Promise<object> {
+  public async createEmployee(params: EmployeeModel): Promise<object> {
     try {
       return await this.employee.create(params);
     } catch (err) {
@@ -27,7 +26,7 @@ export class EmployeesService {
    * @param id
    * @param data
    */
-  protected updateEmployee(id: number, data: object) {
+  public updateEmployee(id: number, data: object) {
     return this.employee.findOneAndUpdate(
       { id },
       { $set: data },
@@ -38,7 +37,7 @@ export class EmployeesService {
   /**
    * Find employee
    */
-  protected findEmployee() {
+  public findEmployee() {
     return this.employee.find();
   }
 
@@ -46,7 +45,7 @@ export class EmployeesService {
    * Query employee by id
    * @param id
    */
-  protected findOneEmployeeById(id: number) {
+  public findOneEmployeeById(id: number) {
     return this.employee.findOne({ id });
   }
 
@@ -54,7 +53,7 @@ export class EmployeesService {
    * Delete employee by id
    * @param id
    */
-  protected deleteOneEmployeeById(id: number) {
+  public deleteOneEmployeeById(id: number) {
     return this.employee.deleteOne({ id });
   }
 }
