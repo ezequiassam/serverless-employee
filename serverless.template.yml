@@ -1,5 +1,5 @@
 name: serverless-employee
-org: serverlessinc
+org: ezequiassam
 description: Deploys a Node REST API service with traditional Serverless Framework and Typescript
 keywords: aws, serverless, faas, lambda, node, typescript
 repo: https://github.com/ezequiassam/serverless-employee
