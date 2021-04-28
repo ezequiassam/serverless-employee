@@ -1,8 +1,8 @@
 import { Document, model, models, Schema } from 'mongoose';
 
 export class EmployeeModel {
-  id: number;
-  name: string;
+  id?: number;
+  name?: string;
   age?: number;
   role?: string;
 }

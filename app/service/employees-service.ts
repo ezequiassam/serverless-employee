@@ -14,10 +14,7 @@ export class EmployeesService {
    */
   protected async createEmployee(params: EmployeeModel): Promise<object> {
     try {
-      return await this.employee.create({
-        name: params.name,
-        id: params.id,
-      });
+      return await this.employee.create(params);
     } catch (err) {
       console.error(err);
 
