@@ -35,6 +35,6 @@ GET - https://215fba5o8e.execute-api.us-east-1.amazonaws.com/dev/employee/{id}
 DELETE - https://215fba5o8e.execute-api.us-east-1.amazonaws.com/dev/employee/{id}
 ```
 
-# Documentação
-Você pode consultar a documentação aqui
+# Documentação da API
+Você pode consultar a documentação [aqui](API.md)
 
